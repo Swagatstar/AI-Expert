@@ -30,49 +30,51 @@ const AIDiagnosticTool: React.FC = () => {
   };
 
   return (
-    <section id="diagnosis" className="py-20 bg-slate-900 text-white rounded-[2.5rem] my-10 mx-4 lg:mx-10 overflow-hidden shadow-2xl">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="diagnosis" className="py-20 bg-blue-950 text-white rounded-[3rem] my-10 mx-4 lg:mx-10 overflow-hidden shadow-2xl relative border border-blue-800">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+      
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 bg-blue-500/10 text-blue-400 text-xs font-bold tracking-widest uppercase rounded-full border border-blue-500/20 mb-4">
-            AI-Powered Diagnostics
+          <span className="inline-block px-4 py-1.5 bg-yellow-400 text-blue-900 text-[10px] font-black tracking-widest uppercase rounded-full mb-4 shadow-lg shadow-yellow-500/10">
+            Silicon Level AI Lab
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Instant pre-repair diagnosis</h2>
-          <p className="text-slate-400 text-lg">Powered by Gemini AI & trained on 35 years of our repair data.</p>
+          <h2 className="text-4xl md:text-5xl font-black mb-4">Instant pre-repair diagnosis</h2>
+          <p className="text-blue-200/60 text-lg">Powered by Gemini AI & trained on 35 years of proprietary repair data.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-start">
-          <form onSubmit={handleSubmit} className="space-y-6 bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+          <form onSubmit={handleSubmit} className="space-y-6 bg-blue-900/40 p-8 rounded-3xl border border-blue-800/50 backdrop-blur-md">
             <div>
-              <label className="block text-sm font-medium mb-2 text-slate-300">Device Model</label>
+              <label className="block text-xs font-black uppercase tracking-widest mb-2 text-blue-300">Device Model</label>
               <input
                 type="text"
                 value={model}
                 onChange={(e) => setModel(e.target.value)}
                 placeholder="e.g. MacBook Pro M2, Dell XPS 15"
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                className="w-full bg-blue-950 border border-blue-800 rounded-xl px-4 py-3 focus:ring-2 focus:ring-yellow-400 outline-none transition-all placeholder-blue-800 text-white"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2 text-slate-300">What's the issue?</label>
+              <label className="block text-xs font-black uppercase tracking-widest mb-2 text-blue-300">Issue Description</label>
               <textarea
                 value={symptoms}
                 onChange={(e) => setSymptoms(e.target.value)}
                 rows={4}
-                placeholder="e.g. Liquid spill on keyboard, won't turn on, fan making noise..."
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
+                placeholder="e.g. Liquid spill on keyboard, won't turn on..."
+                className="w-full bg-blue-950 border border-blue-800 rounded-xl px-4 py-3 focus:ring-2 focus:ring-yellow-400 outline-none transition-all resize-none placeholder-blue-800 text-white"
                 required
               />
             </div>
             <button
               type="submit"
               disabled={status === ServiceStatus.DIAGNOSING}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all disabled:opacity-50 flex items-center justify-center gap-3"
+              className="w-full py-4 bg-yellow-400 text-blue-950 rounded-xl font-black text-lg hover:bg-yellow-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] transition-all disabled:opacity-50 flex items-center justify-center gap-3 uppercase tracking-wider"
             >
               {status === ServiceStatus.DIAGNOSING ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Analyzing Symptoms...
+                  <div className="w-5 h-5 border-2 border-blue-950/30 border-t-blue-950 rounded-full animate-spin" />
+                  Processing...
                 </>
               ) : 'Run AI Diagnostic'}
             </button>
@@ -80,68 +82,69 @@ const AIDiagnosticTool: React.FC = () => {
 
           <div className="min-h-[400px]">
             {status === ServiceStatus.IDLE && (
-              <div className="h-full flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-slate-800 rounded-3xl">
-                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <div className="h-full flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-blue-800 rounded-3xl bg-blue-900/20">
+                <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mb-6 text-yellow-400 border border-blue-800">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <p className="text-slate-500">Your preliminary diagnosis will appear here after analysis.</p>
+                <p className="text-blue-300/50 font-medium">Input your device details to receive a technical diagnosis from our AI expert.</p>
               </div>
             )}
 
             {status === ServiceStatus.DIAGNOSING && (
-              <div className="h-full flex flex-col items-center justify-center space-y-4 animate-pulse">
-                <div className="text-blue-400 font-medium">Consulting our expert database...</div>
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+              <div className="h-full flex flex-col items-center justify-center space-y-4">
+                <div className="text-yellow-400 font-black tracking-widest uppercase text-xs">Accessing 35 years of repair logs</div>
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
                 </div>
               </div>
             )}
 
             {status === ServiceStatus.SUCCESS && result && (
-              <div className="bg-blue-600/10 border border-blue-500/20 p-8 rounded-3xl space-y-6">
+              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl space-y-6 animate-in zoom-in duration-300">
                 <div>
-                  <h3 className="text-xl font-bold text-blue-400 mb-2">Likely Diagnosis</h3>
-                  <p className="text-slate-200 leading-relaxed">{result.diagnosis}</p>
+                  <h3 className="text-xs font-black uppercase tracking-[0.2em] text-yellow-400 mb-2">Technical Diagnosis</h3>
+                  <p className="text-white text-lg font-medium leading-relaxed">{result.diagnosis}</p>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-slate-800/50 p-4 rounded-xl">
-                    <span className="text-xs uppercase text-slate-400 font-bold block mb-1">Estimated Cost</span>
-                    <span className="text-lg font-bold text-white">{result.estimatedCost}</span>
+                  <div className="bg-blue-900/60 p-5 rounded-2xl border border-blue-800/50">
+                    <span className="text-[10px] uppercase text-blue-300 font-black block mb-1 tracking-widest">Est. Quote</span>
+                    <span className="text-xl font-bold text-yellow-400">{result.estimatedCost}</span>
                   </div>
-                  <div className="bg-slate-800/50 p-4 rounded-xl">
-                    <span className="text-xs uppercase text-slate-400 font-bold block mb-1">Repair Time</span>
-                    <span className="text-lg font-bold text-white">{result.repairTime}</span>
+                  <div className="bg-blue-900/60 p-5 rounded-2xl border border-blue-800/50">
+                    <span className="text-[10px] uppercase text-blue-300 font-black block mb-1 tracking-widest">Repair TAT</span>
+                    <span className="text-xl font-bold text-white">{result.repairTime}</span>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-bold text-slate-300 mb-3">Expert Recommendations</h4>
-                  <ul className="space-y-2">
+                  <h4 className="text-[10px] font-black uppercase tracking-widest text-blue-300 mb-3">Guru Recommendations</h4>
+                  <ul className="space-y-3">
                     {result.recommendations.map((rec, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-slate-400">
-                        <span className="text-blue-500">•</span> {rec}
+                      <li key={i} className="flex gap-3 text-sm text-blue-100/70">
+                        <span className="text-yellow-400 font-bold">•</span> {rec}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 pt-4">
                   <button 
                     onClick={shareToWhatsApp}
-                    className="w-full py-3 bg-[#25d366] text-white rounded-xl font-bold hover:bg-[#128c7e] transition-all flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-[#25d366] text-white rounded-2xl font-black hover:bg-[#128c7e] transition-all flex items-center justify-center gap-3 shadow-xl shadow-green-900/20 uppercase tracking-widest text-sm"
                   >
-                    Chat on WhatsApp to Book
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.516.893 3.188 1.364 4.891 1.365 5.148 0 9.334-4.183 9.336-9.332.001-2.496-.972-4.842-2.741-6.61s-4.113-2.741-6.611-2.742c-5.148 0-9.334 4.183-9.336 9.332-.001 1.83.539 3.613 1.558 5.176l-1.02 3.722 3.819-1.001zm9.366-6.112c-.279-.14-.302-.158-1.642-.823-.139-.07-.24-.105-.341.048-.101.154-.393.488-.48.588-.089.1-.177.113-.456.027-.28-.14-1.18-.435-2.248-1.388-.83-.741-1.39-1.654-1.552-1.934-.163-.28-.017-.43.123-.57.125-.127.28-.324.419-.485.041-.046.082-.092.12-.138.101-.154.139-.263.209-.44.07-.175.035-.328-.017-.43-.052-.101-.341-.823-.467-1.127-.123-.298-.247-.257-.341-.262-.088-.004-.189-.005-.291-.005s-.266.038-.406.19c-.139.153-.532.52-.532 1.271 0 .75.544 1.477.621 1.577.076.1 1.071 1.635 2.593 2.293.362.157.645.25.865.319.364.116.696.099.957.06.291-.044.899-.368 1.025-.724.126-.356.126-.66.089-.724-.037-.064-.139-.105-.418-.245z"/></svg>
+                    <span>Instant Quote via WhatsApp</span>
                   </button>
                   <a 
                     href="https://www.laptopgurus.info" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-full py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors text-center block"
+                    className="w-full py-4 bg-white text-blue-950 rounded-2xl font-black hover:bg-yellow-400 transition-all text-center block uppercase tracking-widest text-xs"
                   >
                     Confirm Local Pickup Repair
                   </a>
