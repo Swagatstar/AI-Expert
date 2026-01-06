@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import AIDiagnosticTool from './components/AIDiagnosticTool';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import AIAssistantWidget from './components/AIAssistantWidget';
 
 const App: React.FC = () => {
   const googleMapsUrl = "https://www.google.com/maps/dir//LaptopGurus,+23,+Pari+Nagar+Main+Rd,+Pari+Nagar,+Anbalagan+Nagar,+Pallikaranai,+Chennai,+Tamil+Nadu+600100/@12.9366671,80.2083333,17z/";
@@ -356,8 +357,9 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* WhatsApp Chat Widget */}
+      {/* Floating Widgets */}
       <WhatsAppWidget />
+      <AIAssistantWidget />
     </div>
   );
 };

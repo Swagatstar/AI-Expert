@@ -43,3 +43,35 @@ export const getLaptopDiagnosis = async (symptoms: string, model: string): Promi
     throw new Error("Diagnosis unavailable. Please contact our human experts.");
   }
 };
+
+export const getQuickHealthReport = async (model: string): Promise<{ commonIssues: string[], healthTip: string }> => {
+  const response = await ai.models.generateContent({
+    model: 'gemini-3-flash-preview',
+    contents: `Based on 35 years of laptop repair data, provide a quick health summary for the model: ${model}.
+    List 3 common hardware failures for this specific model and 1 maintenance tip. 
+    Keep it very concise for a floating widget view.`,
+    config: {
+      responseMimeType: "application/json",
+      responseSchema: {
+        type: Type.OBJECT,
+        properties: {
+          commonIssues: {
+            type: Type.ARRAY,
+            items: { type: Type.STRING }
+          },
+          healthTip: { type: Type.STRING }
+        },
+        required: ["commonIssues", "healthTip"]
+      }
+    }
+  });
+
+  try {
+    return JSON.parse(response.text);
+  } catch (error) {
+    return {
+      commonIssues: ["General wear and tear", "Dust accumulation", "Battery degradation"],
+      healthTip: "Keep your vents clear and use a hard surface."
+    };
+  }
+};
