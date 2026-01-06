@@ -36,11 +36,11 @@ const App: React.FC = () => {
                 World-class repairs for high-end hardware. From motherboard component-level soldering to custom Mac upgrades, we treat every machine like our own.
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href="https://www.laptopgurus.info" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-yellow-400 text-blue-900 rounded-2xl font-bold text-lg hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl shadow-yellow-500/30">
+                <a href="#diagnosis" className="px-8 py-4 bg-yellow-400 text-blue-900 rounded-2xl font-bold text-lg hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl shadow-yellow-500/30">
                   Try AI Diagnostic
                 </a>
-                <a href="https://www.laptopgurus.info" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
-                  Browse Services
+                <a href="#perks" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
+                  Dr & Student Perks
                 </a>
               </div>
               
@@ -129,6 +129,95 @@ const App: React.FC = () => {
                 <p className="text-slate-600 leading-relaxed">{service.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Guru Perks: Exclusive Offers for Doctors & Students */}
+      <section id="perks" className="py-24 bg-blue-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-24 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-blue-950 mb-4">Guru Perks: Our Way of Giving Back</h2>
+            <p className="text-blue-800/60 text-lg max-w-2xl mx-auto">Special priority and savings for those who heal and those who learn. Simply show your ID.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Doctors Offer */}
+            <div className="bg-white rounded-[3rem] p-10 shadow-xl border-t-8 border-blue-600 hover:scale-[1.02] transition-transform group">
+              <div className="flex items-center justify-between mb-8">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <span className="px-4 py-1.5 bg-yellow-100 text-yellow-700 text-xs font-black uppercase tracking-widest rounded-full">Medical Priority</span>
+              </div>
+              <h3 className="text-3xl font-black text-slate-900 mb-4">For Doctors & Medical Staff</h3>
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                We understand your laptop is mission-critical. Whether it's patient records or research, we ensure zero downtime.
+              </p>
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-center gap-3 text-slate-700 font-medium">
+                  <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
+                  24-Hour Express Turnaround
+                </li>
+                <li className="flex items-center gap-3 text-slate-700 font-medium">
+                  <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
+                  Free Doorstep Pickup & Drop (Chennai)
+                </li>
+                <li className="flex items-center gap-3 text-slate-700 font-medium">
+                  <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
+                  Complimentary External Sanitization
+                </li>
+              </ul>
+              <a 
+                href="https://www.laptopgurus.info" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block text-center py-4 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all"
+              >
+                Claim Priority Service
+              </a>
+            </div>
+
+            {/* Students Offer */}
+            <div className="bg-white rounded-[3rem] p-10 shadow-xl border-t-8 border-yellow-400 hover:scale-[1.02] transition-transform group">
+              <div className="flex items-center justify-between mb-8">
+                <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600 group-hover:bg-yellow-400 group-hover:text-blue-900 transition-colors duration-500">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  </svg>
+                </div>
+                <span className="px-4 py-1.5 bg-blue-100 text-blue-700 text-xs font-black uppercase tracking-widest rounded-full">Academic Edge</span>
+              </div>
+              <h3 className="text-3xl font-black text-slate-900 mb-4">For All Students</h3>
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                Assignments, projects, or thesis—don't let a hardware glitch stop your hustle. Get the best tech support on a student budget.
+              </p>
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-center gap-3 text-slate-700 font-medium">
+                  <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
+                  Flat 15% OFF on Service Charges
+                </li>
+                <li className="flex items-center gap-3 text-slate-700 font-medium">
+                  <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
+                  Free Thermal Paste Repasting
+                </li>
+                <li className="flex items-center gap-3 text-slate-700 font-medium">
+                  <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
+                  OS Optimization & Performance Check
+                </li>
+              </ul>
+              <a 
+                href="https://www.laptopgurus.info" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block text-center py-4 bg-yellow-400 text-blue-950 rounded-2xl font-black text-lg shadow-lg shadow-yellow-200 hover:bg-yellow-300 transition-all"
+              >
+                Claim Student Discount
+              </a>
+            </div>
           </div>
         </div>
       </section>
