@@ -129,10 +129,36 @@ const App: React.FC = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
-            <a href="https://www.laptopgurus.info" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline group inline-flex items-center gap-2">
-              View All Specialized Services <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </a>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="py-24 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 relative group">
+              <div className="absolute inset-0 bg-yellow-400 rounded-[2.5rem] rotate-6 group-hover:rotate-0 transition-transform duration-500 shadow-xl"></div>
+              <div className="absolute inset-0 bg-blue-600 rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-lg"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400" 
+                alt="Swagat S - CEO & Founder" 
+                className="relative z-10 w-full h-full object-cover rounded-[2.5rem] border-4 border-white shadow-2xl"
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-black uppercase tracking-widest rounded-full mb-4">
+                The Mastermind
+              </div>
+              <h2 className="text-4xl font-black text-slate-900 mb-2">Swagat S</h2>
+              <p className="text-xl font-bold text-blue-600 mb-6">CEO & Founder</p>
+              <p className="text-slate-600 text-lg leading-relaxed mb-8 italic">
+                "35 years ago, I started with a passion for silicon-level precision. Today, LaptopGurus stands as a testament to engineering excellence, where we don't just repair machines—we restore the heart of your digital life."
+              </p>
+              <div className="flex items-center justify-center md:justify-start gap-4">
+                <div className="w-12 h-px bg-slate-200"></div>
+                <span className="text-slate-400 font-mono text-sm tracking-[0.2em] uppercase">Swagat S. signature of quality</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -261,10 +287,14 @@ const App: React.FC = () => {
                 <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold shadow-lg shadow-blue-600/20">LG</div>
                 <span className="text-2xl font-bold tracking-tight">Laptop<span className="text-yellow-400">Gurus</span></span>
               </div>
-              <p className="text-slate-400 max-w-sm mb-8 leading-relaxed">
+              <p className="text-slate-400 max-w-sm mb-4 leading-relaxed">
                 The most trusted name in laptop forensics and repairs since 1989. 
                 Providing silicon-level solutions for the modern world.
               </p>
+              <div className="mb-8">
+                <p className="text-white font-bold text-sm">Swagat S</p>
+                <p className="text-yellow-400 text-xs font-bold tracking-widest uppercase">CEO & Founder</p>
+              </div>
               <div className="flex gap-4">
                 <a 
                   href="https://www.facebook.com/profile.php?id=61578252969000" 
