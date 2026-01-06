@@ -137,9 +137,14 @@ const AIDiagnosticTool: React.FC = () => {
                   >
                     Chat on WhatsApp to Book
                   </button>
-                  <button className="w-full py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors">
+                  <a 
+                    href="https://www.laptopgurus.info" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors text-center block"
+                  >
                     Confirm Local Pickup Repair
-                  </button>
+                  </a>
                 </div>
               </div>
             )}
