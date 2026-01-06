@@ -1,0 +1,7 @@
+{
+  "name": "LaptopGurus AI - Expert Repairs",
+  "description": "Premium laptop repair services for Mac and PC, featuring AI-powered diagnostics and 35+ years of industry expertise.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
