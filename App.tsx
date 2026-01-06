@@ -5,6 +5,8 @@ import AIDiagnosticTool from './components/AIDiagnosticTool';
 import WhatsAppWidget from './components/WhatsAppWidget';
 
 const App: React.FC = () => {
+  const googleMapsUrl = "https://www.google.com/maps/dir//LaptopGurus,+23,+Pari+Nagar+Main+Rd,+Pari+Nagar,+Anbalagan+Nagar,+Pallikaranai,+Chennai,+Tamil+Nadu+600100/@12.9366671,80.2083333,17z/";
+
   return (
     <div className="min-h-screen selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
@@ -182,6 +184,54 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Map/Location Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
+            <div className="flex-1 text-center md:text-left">
+              <span className="text-blue-600 font-bold uppercase tracking-widest text-xs block mb-4">Our Location</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">Visit Our Workshop</h2>
+              <p className="text-slate-600 mb-6 leading-relaxed">
+                Scan the QR code to open Google Maps directly on your phone and navigate to our workshop in Chennai.
+              </p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center justify-center md:justify-start gap-3 text-slate-700">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span># 23 Pari Nagar Gandhi Street, Chennai</span>
+                </div>
+                <div className="flex items-center justify-center md:justify-start gap-3 text-slate-700">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Mon-Sat: 09:00 AM - 07:00 PM</span>
+                </div>
+              </div>
+              <a 
+                href={googleMapsUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-md"
+              >
+                <span>Open in Google Maps</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-blue-100 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-white p-4 rounded-3xl shadow-xl border border-slate-200">
+                <img 
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.google.com/maps/search/?api=1%26query=LaptopGurus%2BPari%2BNagar%2BChennai" 
+                  alt="Google Maps QR Code" 
+                  className="w-48 h-48 md:w-64 md:h-64 rounded-xl"
+                />
+                <div className="mt-4 text-center">
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Scan for directions</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer id="contact" className="bg-slate-950 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -196,9 +246,31 @@ const App: React.FC = () => {
                 Providing silicon-level solutions for the modern world.
               </p>
               <div className="flex gap-4">
-                <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">FB</div>
-                <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">TW</div>
-                <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">LI</div>
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61578252969000" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                  title="Follow us on Facebook"
+                >
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://x.com/home" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                  title="Follow us on X"
+                >
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
+                  <span className="text-xs font-bold">LI</span>
+                </div>
               </div>
             </div>
             <div>
