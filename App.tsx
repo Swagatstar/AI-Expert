@@ -398,7 +398,7 @@ const App: React.FC = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://x.com/home" 
+                  href="https://x.com/laptop_gurus" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all text-slate-400"
