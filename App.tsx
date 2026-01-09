@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import AIDiagnosticTool from './components/AIDiagnosticTool';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import AIAssistantWidget from './components/AIAssistantWidget';
+import Testimonials from './components/Testimonials';
 
 const App: React.FC = () => {
   const googleMapsUrl = "https://www.google.com/maps/dir//LaptopGurus,+23,+Pari+Nagar+Main+Rd,+Pari+Nagar,+Anbalagan+Nagar,+Pallikaranai,+Chennai,+Tamil+Nadu+600100/@12.9366671,80.2083333,17z/";
@@ -36,10 +37,18 @@ const App: React.FC = () => {
                 World-class repairs for high-end hardware. From motherboard component-level soldering to custom Mac upgrades, we treat every machine like our own.
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href="#diagnosis" className="px-8 py-4 bg-yellow-400 text-blue-900 rounded-2xl font-bold text-lg hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl shadow-yellow-500/30">
-                  Try AI Diagnostic
+                <a 
+                  href="https://www.laptopgurus.info" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="px-8 py-4 bg-yellow-400 text-blue-900 rounded-2xl font-bold text-lg hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl shadow-yellow-500/30"
+                >
+                  Mac | iMac
                 </a>
-                <a href="#perks" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
+                <a href="#windows-gaming" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
+                  Windows | Gaming
+                </a>
+                <a href="#exclusive-perks" className="px-8 py-4 bg-blue-900 text-white rounded-2xl font-bold text-lg hover:bg-blue-950 transition-all border border-blue-400/30">
                   Dr & Student Perks
                 </a>
               </div>
@@ -133,42 +142,44 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Guru Perks: Exclusive Offers for Doctors & Students */}
-      <section id="perks" className="py-24 bg-blue-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-24 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* Windows & Gaming: Specialized Performance Section */}
+      <section id="windows-gaming" className="py-24 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-blue-950 mb-4">Guru Perks: Our Way of Giving Back</h2>
-            <p className="text-blue-800/60 text-lg max-w-2xl mx-auto">Special priority and savings for those who heal and those who learn. Simply show your ID.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-blue-950 mb-4">Windows | Gaming Specialists</h2>
+            <p className="text-blue-800/60 text-lg max-w-2xl mx-auto">High-performance solutions for Windows workstations and extreme gaming rigs. We speak FPS and silicon.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
-            {/* Doctors Offer */}
+            {/* Windows Workstations */}
             <div className="bg-white rounded-[3rem] p-10 shadow-xl border-t-8 border-blue-600 hover:scale-[1.02] transition-transform group">
               <div className="flex items-center justify-between mb-8">
                 <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
                   <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span className="px-4 py-1.5 bg-yellow-100 text-yellow-700 text-xs font-black uppercase tracking-widest rounded-full">Medical Priority</span>
+                <span className="px-4 py-1.5 bg-yellow-100 text-yellow-700 text-xs font-black uppercase tracking-widest rounded-full">Windows Elite</span>
               </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4">For Doctors & Medical Staff</h3>
+              <h3 className="text-3xl font-black text-slate-900 mb-4">Workstation Performance</h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                We understand your laptop is mission-critical. Whether it's patient records or research, we ensure zero downtime.
+                Expert support for Dell Precision, HP ZBook, and Lenovo ThinkPads. We optimize your OS for maximum productivity and zero crashes.
               </p>
               <ul className="space-y-4 mb-10">
                 <li className="flex items-center gap-3 text-slate-700 font-medium">
                   <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
-                  24-Hour Express Turnaround
+                  Advanced Bloatware Removal & OS Tuning
                 </li>
                 <li className="flex items-center gap-3 text-slate-700 font-medium">
                   <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
-                  Free Doorstep Pickup & Drop (Chennai)
+                  NVMe RAID & RAM High-Speed Upgrades
                 </li>
                 <li className="flex items-center gap-3 text-slate-700 font-medium">
                   <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
-                  Complimentary External Sanitization
+                  BIOS & Firmware Forensic Recovery
                 </li>
               </ul>
               <a 
@@ -177,36 +188,36 @@ const App: React.FC = () => {
                 rel="noopener noreferrer" 
                 className="block text-center py-4 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all"
               >
-                Claim Priority Service
+                Boost Workstation
               </a>
             </div>
 
-            {/* Students Offer */}
+            {/* Gaming RIGS */}
             <div className="bg-white rounded-[3rem] p-10 shadow-xl border-t-8 border-yellow-400 hover:scale-[1.02] transition-transform group">
               <div className="flex items-center justify-between mb-8">
                 <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600 group-hover:bg-yellow-400 group-hover:text-blue-900 transition-colors duration-500">
                   <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <span className="px-4 py-1.5 bg-blue-100 text-blue-700 text-xs font-black uppercase tracking-widest rounded-full">Academic Edge</span>
+                <span className="px-4 py-1.5 bg-blue-100 text-blue-700 text-xs font-black uppercase tracking-widest rounded-full">Gaming Pro</span>
               </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4">For All Students</h3>
+              <h3 className="text-3xl font-black text-slate-900 mb-4">Gaming Performance</h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                Assignments, projects, or thesis—don't let a hardware glitch stop your hustle. Get the best tech support on a student budget.
+                ROG, Alienware, Legion, or MSI—we fix GPUs, resolve thermal throttling, and get you back into the game with better thermals.
               </p>
               <ul className="space-y-4 mb-10">
                 <li className="flex items-center gap-3 text-slate-700 font-medium">
                   <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
-                  Flat 15% OFF on Service Charges
+                  GPU Reballing & VRAM Repair
                 </li>
                 <li className="flex items-center gap-3 text-slate-700 font-medium">
                   <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
-                  Free Thermal Paste Repasting
+                  Industrial Liquid Metal Application
                 </li>
                 <li className="flex items-center gap-3 text-slate-700 font-medium">
                   <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs">✓</div>
-                  OS Optimization & Performance Check
+                  High-Refresh Display Calibration
                 </li>
               </ul>
               <a 
@@ -215,8 +226,90 @@ const App: React.FC = () => {
                 rel="noopener noreferrer" 
                 className="block text-center py-4 bg-yellow-400 text-blue-950 rounded-2xl font-black text-lg shadow-lg shadow-yellow-200 hover:bg-yellow-300 transition-all"
               >
-                Claim Student Discount
+                Max My FPS
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Exclusive Guru Perks: Doctors & Students - Modern Edge Design */}
+      <section id="exclusive-perks" className="py-24 bg-blue-950 relative overflow-hidden">
+        {/* Abstract Background Decoration */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-400 rounded-full blur-[100px]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-blue-400/20 rounded-full"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-yellow-400 rounded-full blur-[80px]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-yellow-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block">Priority Ecosystem</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">Exclusive <span className="text-blue-400">Guru Perks</span></h2>
+            <p className="text-blue-200/50 text-xl max-w-2xl mx-auto font-light">Dedicated support for those who heal and those who dream. Simply show your ID card.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Doctors Card */}
+            <div className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-[4rem] p-12 overflow-hidden hover:border-blue-400/50 transition-all duration-700">
+              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity">
+                <svg className="w-40 h-40 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
+              </div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center text-white mb-10 shadow-2xl shadow-blue-600/30 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                </div>
+                <h3 className="text-4xl font-black text-white mb-4">Medical Priority</h3>
+                <p className="text-blue-200/60 mb-10 text-lg leading-relaxed">For Doctors & Medical Staff. We ensure your critical data and research never experience downtime.</p>
+                <div className="space-y-6 mb-12">
+                  <div className="flex items-center gap-4 text-white font-bold">
+                    <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs">✓</div>
+                    <span>Instant TAT (24h Turnaround)</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-white font-bold">
+                    <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs">✓</div>
+                    <span>Zero-Cost Doorstep Pickup & Drop</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-white font-bold">
+                    <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs">✓</div>
+                    <span>Complimentary Lab-Grade Sanitization</span>
+                  </div>
+                </div>
+                <a href="#contact" className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-blue-500 transition-all">
+                  Claim Doctor Perk
+                </a>
+              </div>
+            </div>
+
+            {/* Students Card */}
+            <div className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-[4rem] p-12 overflow-hidden hover:border-yellow-400/50 transition-all duration-700">
+              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity">
+                <svg className="w-40 h-40 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M3.88 12.88L2 13.5V19c0 1.1.9 2 2 2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2c1.1 0 2-.9 2-2v-5.5l-1.88-.62L12 17l-8.12-4.12z"/></svg>
+              </div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 bg-yellow-400 rounded-3xl flex items-center justify-center text-blue-950 mb-10 shadow-2xl shadow-yellow-400/30 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
+                </div>
+                <h3 className="text-4xl font-black text-white mb-4">Student Advantage</h3>
+                <p className="text-blue-200/60 mb-10 text-lg leading-relaxed">For Students & Researchers. High-grade engineering support that fits your academic budget.</p>
+                <div className="space-y-6 mb-12">
+                  <div className="flex items-center gap-4 text-white font-bold">
+                    <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs">✓</div>
+                    <span>Flat 20% Discount on Service Charges</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-white font-bold">
+                    <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs">✓</div>
+                    <span>Free Industrial Thermal Management</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-white font-bold">
+                    <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs">✓</div>
+                    <span>OS Hygiene & Performance Audit</span>
+                  </div>
+                </div>
+                <a href="#contact" className="inline-flex items-center gap-3 px-10 py-5 bg-yellow-400 text-blue-950 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-yellow-300 transition-all">
+                  Claim Student Perk
+                </a>
+              </div>
             </div>
           </div>
         </div>
