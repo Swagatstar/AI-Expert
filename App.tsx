@@ -256,63 +256,6 @@ const App: React.FC = () => {
       {/* AI Tool */}
       <AIDiagnosticTool />
 
-      {/* Workflow Section - Modern Blue Background */}
-      <section className="py-24 bg-blue-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-800 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 opacity-30"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-white/5 backdrop-blur-md rounded-[3rem] p-8 md:p-16 border border-white/10 shadow-2xl overflow-hidden relative">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Fully Automated Service Flow</h2>
-                <p className="text-blue-100/80 mb-8 leading-relaxed">
-                  We use a cutting-edge 4-tool stack to ensure your repair is fast and transparent. 
-                  From the moment you submit a form, Gemini AI starts diagnosing, HubSpot tracks your device, 
-                  and WhatsApp keeps you updated in real-time.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    { tool: 'Google Sites', task: 'Lightning-fast hosting & UX' },
-                    { tool: 'HubSpot', task: 'End-to-end CRM service tracking' },
-                    { tool: 'Gemini AI', task: 'Instant technical diagnostics' },
-                    { tool: 'Tidio/WhatsApp', task: 'Real-time repair notifications' }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
-                      <div className="w-8 h-8 bg-yellow-400 text-blue-900 rounded-full flex items-center justify-center font-bold text-xs">{i+1}</div>
-                      <div>
-                        <span className="font-bold">{item.tool}</span>
-                        <span className="mx-2 text-white/20">|</span>
-                        <span className="text-blue-100/60 text-sm">{item.task}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-slate-950 rounded-3xl p-1 shadow-2xl border border-white/5">
-                <div className="bg-slate-900 rounded-2xl p-6 text-sm font-mono text-blue-400">
-                  <div className="mb-4 opacity-50">// System Workflow Triggered</div>
-                  <div className="flex gap-2 mb-2">
-                    <span className="text-slate-500">1:</span>
-                    <span className="text-blue-300">HubSpot.onFormSubmission("MacBook screen issue")</span>
-                  </div>
-                  <div className="flex gap-2 mb-2">
-                    <span className="text-slate-500">2:</span>
-                    <span className="text-yellow-400">Zapier.forward(symptoms) -> Gemini</span>
-                  </div>
-                  <div className="flex gap-2 mb-2">
-                    <span className="text-slate-500">3:</span>
-                    <span className="text-green-400">Gemini.generateQuote() -> Success</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <span className="text-slate-500">4:</span>
-                    <span className="text-blue-300">WhatsApp.trigger(DiagnosisNotification)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Map/Location Section - Modern Yellow Highlight */}
       <section className="py-24 bg-yellow-400">
         <div className="max-w-5xl mx-auto px-4">
